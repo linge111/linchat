@@ -61,7 +61,7 @@ fi
 
 echo "Downloading configuration files..."
 
-sudo curl -L "https://raw.githubusercontent.com/Unclesimonlau/chatgpt-ui/main/docker-compose.yml" -o docker-compose.yml
+sudo curl -L "https://raw.githubusercontent.com/linge111/linchat/main/chatgpt-ui-2.2.6/docker-compose.yml" -o docker-compose.yml
 
 echo "Starting services..."
 
