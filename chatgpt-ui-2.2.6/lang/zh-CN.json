@@ -1,0 +1,57 @@
+{
+  "welcomeTo": "欢迎来到",
+  "language": "语言",
+  "setApiKey": "设置API密钥",
+  "setOpenAIApiKey": "设置OpenAI的API密钥",
+  "openAIApiKey": "OpenAI的API密钥",
+  "getAKey": "获取钥匙",
+  "openAIModels": "OpenAI模型",
+  "aboutTheModels": "关于模型",
+  "saveAndClose": "保存并关闭",
+  "pleaseSelectAtLeastOneModelDot": "请至少选择一个模型",
+  "writeAMessage": "输入信息",
+  "pressEnterToSendYourMessageOrShiftEnterToAddANewLine": "按回车键发送您的信息，或按Shift+Enter键添加新行",
+  "lightMode": "明亮模式",
+  "darkMode": "暗色模式",
+  "followSystem": "跟随系统",
+  "themeMode": "主题模式",
+  "feedback": "反馈",
+  "newConversation": "新的对话",
+  "clearConversations": "清除对话",
+  "modelParameters": "模型参数",
+  "model": "模型",
+  "temperature": "数值越小准确性越高",
+  "topP": "数值越小准确性越高",
+  "frequencyPenalty": "数值越小上文关联越准确",
+  "presencePenalty": "数值越小下文关联越准确",
+  "maxTokens": "文本最大长度",
+  "roles": {
+    "me": "我",
+    "ai": "AI"
+  },
+  "copy": "复制",
+  "copied": "已复制",
+  "delete": "删除",
+  "welcomeScreen": {
+    "introduction1": "DnAi AI 是基于Open-Ai，ChatGPT的客户端",
+    "introduction2": "但需要使用OpenAI的官方API密钥。",
+    "examples": {
+      "title": "例子",
+      "item1": "\"你可以跟它说请以心理咨询师的身份帮我写一份关于挽救婚姻的1分钟短视频文案。\"",
+      "item2": "\"你也可以跟它说你现在的身份是一个全职妈妈，名字叫小美，接下来请用全职妈妈小美的身份回答我的问题。\"",
+      "item3": "\"你也可以试试问它今天晚饭吃什么。\""
+    },
+    "capabilities": {
+      "title": "能力",
+      "item1": "如果是手机用户在左上角的三个杠中可以找到你们的历史谈话。",
+      "item2": "你也可以发给它一篇文章，让他针对一些词语进行更正，或者替换掉文章中的某些你指定的词语。",
+      "item3": "如果没有回答完你可以回复“继续。”"
+    },
+    "limitations": {
+      "title": "局限",
+      "item1": "偶尔可能会产生不正确的信息，你需要整理问问题的方式重新进行提问。",
+      "item2": "可能偶尔会产生有害的指示或有偏见的内容，如果回答不满意，可以重新尝试提问，直到得到满意的答案为止。",
+      "item3": "对2021年以后的世界和事件了解有限。"
+    }
+  }
+}

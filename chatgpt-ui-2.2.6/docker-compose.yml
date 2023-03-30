@@ -1,0 +1,51 @@
+version: '3'
+services:
+  client:
+    image: wongsaang/chatgpt-ui-client:latest
+    environment:
+      - SERVER_DOMAIN=http://backend-web-server
+      - NUXT_PUBLIC_APP_NAME='DnAI'
+      - NUXT_PUBLIC_TYPEWRITER=False
+      - NUXT_PUBLIC_TYPEWRITER_DELAY=50
+    depends_on:
+      - backend-web-server
+    ports:
+      - '${CLIENT_PORT:-80}:80'
+    networks:
+      - chatgpt_ui_network
+    restart: always
+  backend-wsgi-server:
+    image: wongsaang/chatgpt-ui-wsgi-server:latest
+    environment:
+      - APP_DOMAIN=${APP_DOMAIN:-localhost:9000}
+      - DB_URL=mysql://BlximiAi001:20160722Yy+lau@172.17.0.1:3306/blximiai001 # If this parameter is not set, the built-in Sqlite will be used by default. It should be noted that if you do not connect to an external database, the data will be lost after the container is destroyed.
+      - DJANGO_SUPERUSER_USERNAME=admin # default superuser name
+      - DJANGO_SUPERUSER_PASSWORD=password # default superuser password
+      - DJANGO_SUPERUSER_EMAIL=unclesimonlau@gmail.com # default superuser email
+      - ACCOUNT_EMAIL_VERIFICATION=${ACCOUNT_EMAIL_VERIFICATION:-none} # Determines the e-mail verification method during signup – choose one of "none", "optional", or "mandatory". Default is "optional". If you don't need to verify the email, you can set it to "none".
+      # If you want to use the email verification function, you need to configure the following parameters
+      - EMAIL_HOST=smtp.gmail.com
+      - EMAIL_PORT=465
+      - EMAIL_HOST_USER=unclesimonlau@gmail.com
+      - EMAIL_HOST_PASSWORD=uciueyhalymbjgan
+      - EMAIL_USE_TLS=True
+    ports:
+      - '${WSGI_PORT:-8000}:8000'
+    networks:
+      - chatgpt_ui_network
+    restart: always
+  backend-web-server:
+    image: wongsaang/chatgpt-ui-web-server:latest
+    environment:
+      - BACKEND_URL=http://backend-wsgi-server:8000
+    ports:
+      - '${SERVER_PORT:-9000}:9000'
+    depends_on:
+      - backend-wsgi-server
+    networks:
+      - chatgpt_ui_network
+    restart: always
+
+networks:
+  chatgpt_ui_network:
+    driver: bridge
